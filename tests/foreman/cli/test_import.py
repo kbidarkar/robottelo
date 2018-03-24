@@ -62,7 +62,7 @@ def build_csv_file(rows=None, dirname=None):
     if rows is None:
         rows = [{}]
     file_name = tempfile.mkstemp()[1]
-    with open(file_name, 'wb') as csv_file:
+    with open(file_name, 'w') as csv_file:
         csv_writer = csv.DictWriter(
             csv_file, fieldnames=rows[0].keys(), lineterminator='\n'
         )
